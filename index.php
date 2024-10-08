@@ -1,34 +1,3 @@
-<?php
-    $conn = mysqli_connect('localhost','root','','lancer');
-    
-    // The number of freelancers who create an account
-    $sql_freelancers = "SELECT count(*) from freelancer";
-    $result_freelancers = mysqli_query($conn, $sql_freelancers);
-    if (!$result_freelancers) {
-        die("Error: " . mysqli_error($conn));
-    }
-    $row_freelancers = mysqli_fetch_array($result_freelancers);
-    $freelancers_count = implode(',', $row_freelancers);
-
-    // The number of clients who create an account
-    $sql_clients = "SELECT count(*) from client";
-    $result_clients = mysqli_query($conn, $sql_clients);
-    if (!$result_clients) {
-        die("Error: " . mysqli_error($conn));
-    }
-    $row_clients = mysqli_fetch_array($result_clients);
-    $clients_count = implode(',', $row_clients);
-
-    // The number of jobs available
-    $sql_jobs = "SELECT count(*) from jobs";
-    $result_jobs = mysqli_query($conn, $sql_jobs);
-    if (!$result_jobs) {
-        die("Error: " . mysqli_error($conn));
-    }
-    $row_jobs = mysqli_fetch_array($result_jobs);
-    $jobs_count = implode(',', $row_jobs);
-?>
-
 
 <!DOCTYPE html>
 <html lang="en">
